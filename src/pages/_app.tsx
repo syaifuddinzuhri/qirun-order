@@ -7,7 +7,6 @@ import "../styles/carousel.css";
 import 'react-datetime/css/react-datetime.css';
 
 import { ChakraProvider } from "@chakra-ui/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { AppContext } from "next/app";
 import App from "next/app";
 import { DefaultSeo } from "next-seo";
@@ -18,31 +17,19 @@ import { theme } from "@/configs/themeConfiguration";
 import { appHead } from "@/constants/app";
 import type { NextAppProps } from "@/interfaces/next";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      retry: 0,
-    },
-  },
-});
-
 const MyApp = ({ Component, pageProps }: NextAppProps): ReactElement => {
   const getLayout = Component?.layout ?? ((children: JSX.Element) => children);
   const page = getLayout(<Component {...pageProps} />);
 
   return (
     <ChakraProvider theme={theme}>
-      <QueryClientProvider client={queryClient}>
         <DefaultSeo {...appHead} />
         <>{page}</>
-      </QueryClientProvider>
     </ChakraProvider>
   );
 };
 
 MyApp.getInitialProps = async (appContext: AppContext) => {
-  // calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(appContext);
   return { ...appProps };
 };
