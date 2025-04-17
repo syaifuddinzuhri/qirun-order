@@ -2,7 +2,7 @@ import React from 'react'
 
 const HomeComponent = () => {
   return (
-    <div>HomeComponent</div>
+    <div>SELAMAT DATANG DI WEB PESANAN BEBEK QIRUN</div>
   )
 }
 
