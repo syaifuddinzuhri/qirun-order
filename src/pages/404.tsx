@@ -1,6 +1,4 @@
-import { NOTFOUND_LOADER } from '@/constants/global';
 import { Box, Heading, Text, Button } from '@chakra-ui/react';
-import Lottie from 'lottie-react';
 
 const Custom404: React.FC = () => {
   return (
@@ -19,9 +17,6 @@ const Custom404: React.FC = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Box w={300}>
-          <Lottie animationData={NOTFOUND_LOADER} loop />
-        </Box>
       </Box>
       <Heading as="h1" size="2xl" mb={4} mt={3}>
         Page Not Found
