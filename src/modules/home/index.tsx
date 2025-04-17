@@ -1,11 +1,22 @@
-import { Center, Text } from '@chakra-ui/react'
+import { Container, Flex, Text, Box, Center } from '@chakra-ui/react'
+import Image from 'next/image'
 import React from 'react'
+import DaftarMenuList from './DaftarMenuList'
 
 const HomeComponent = () => {
   return (
-    <Center bg="green" h="100px" color="white">
-      <Text fontWeight={'bold'} align={'center'} textStyle="7xl">SELAMAT DATANG DI WEB PESANAN BEBEK QIRUN. OTEWEEEEEE SABAR BOSS!!!</Text>
-    </Center>
+    <Box py={4}>
+      <Center mb={4}>
+        <Image
+          src="/logo.png"
+          width={250}
+          height={100}
+          alt="Logo Ayam Bebek Qirun"
+          priority
+        />
+      </Center>
+      <DaftarMenuList />
+    </Box>
   )
 }
 

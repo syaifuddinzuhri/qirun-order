@@ -3,10 +3,11 @@ import "@fontsource/inter/500.css";
 import "@fontsource/inter/700.css";
 import "@fontsource/inter/900.css";
 import "@fontsource/roboto/700.css";
-import "../styles/carousel.css";
+import '@fontsource/poppins';
+import '@fontsource-variable/montserrat';
 import 'react-datetime/css/react-datetime.css';
 
-import { ChakraProvider } from "@chakra-ui/react";
+import { Box, ChakraProvider } from "@chakra-ui/react";
 import type { AppContext } from "next/app";
 import App from "next/app";
 import { DefaultSeo } from "next-seo";
@@ -24,7 +25,7 @@ const MyApp = ({ Component, pageProps }: NextAppProps): ReactElement => {
   return (
     <ChakraProvider theme={theme}>
         <DefaultSeo {...appHead} />
-        <>{page}</>
+        <Box bg='green.600' px={2}>{page}</Box>
     </ChakraProvider>
   );
 };

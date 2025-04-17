@@ -62,50 +62,12 @@ const theme = extendTheme(
   <ThemeOverride>{
     colors: { ...colors.colors },
     fonts: {
-      heading: `'Inter', sans-serif`,
-      body: `'Inter', sans-serif`,
+      heading: `'Montserrat Variable', sans-serif`,
+      body: `'Montserrat Variable', sans-serif`,
     },
     lineHeights: {
       xs: "20px",
       sm: "24px",
-    },
-    textStyles: {
-      small: {
-        fontSize: { base: "10px", md: "12px" },
-        lineHeight: { base: "16px", md: "20px" },
-        fontWeight: 400,
-        color: colorConfig.gray40,
-      },
-      p: {
-        fontSize: { base: "12px", md: "14px" },
-        lineHeight: { base: "20px", md: "24px" },
-        fontWeight: 400,
-        color: colorConfig.gray40,
-      },
-      h1: {
-        fontSize: { base: "30px", md: "64px" },
-        lineHeight: { base: "50px", md: "90px" },
-        fontWeight: 700,
-        color: colorConfig.gray10,
-      },
-      h2: {
-        fontSize: { base: "18px", md: "30px" },
-        lineHeight: { base: "30px", md: "40px" },
-        fontWeight: 700,
-        color: colorConfig.gray10,
-      },
-      h3: {
-        fontSize: { base: "16px", md: "24px" },
-        lineHeight: { base: "24px", md: "30px" },
-        fontWeight: 700,
-        color: colorConfig.gray10,
-      },
-      h4: {
-        fontSize: { base: "14px", md: "16px" },
-        lineHeight: "24px",
-        fontWeight: 400,
-        color: colorConfig.gray40,
-      },
     },
     components: {
       MonthPicker: {
