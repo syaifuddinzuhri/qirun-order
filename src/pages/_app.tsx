@@ -25,7 +25,7 @@ const MyApp = ({ Component, pageProps }: NextAppProps): ReactElement => {
   return (
     <ChakraProvider theme={theme}>
         <DefaultSeo {...appHead} />
-        <Box bg='green.600' px={2}>{page}</Box>
+        <Box bg='green.600'>{page}</Box>
     </ChakraProvider>
   );
 };

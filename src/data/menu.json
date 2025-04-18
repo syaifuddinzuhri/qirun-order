@@ -1,0 +1,22 @@
+{
+  "makanan": [
+    { "id": 1, "name": "Nasi + Ayam Goreng", "price": 25000, "is_ready": false  },
+    { "id": 2, "name": "Nasi + Bebek Goreng", "price": 20000, "is_ready": false  },
+    { "id": 3, "name": "Nasi + Rempelo Ati", "price": 30000, "is_ready": true  },
+    { "id": 4, "name": "Nasi + Telur", "price": 22000, "is_ready": true  },
+    { "id": 5, "name": "Nasi + Tempe/Tahu", "price": 27000, "is_ready": true }
+  ],
+  "minuman": [
+    { "id": 6, "name": "Es Jeruk", "price": 5000, "is_ready": true  },
+    { "id": 7, "name": "Es Teh", "price": 5000, "is_ready": true  },
+    { "id": 8, "name": "Teh Panas/Hangat", "price": 5000, "is_ready": true  },
+    { "id": 9, "name": "Jeruk Panas/Hangat", "price": 5000, "is_ready": true  },
+    { "id": 10, "name": "Kopi", "price": 5000, "is_ready": true  },
+    { "id": 11, "name": "Air Mineral", "price": 5000, "is_ready": true }
+  ],
+  "tambahan": [
+    { "id": 12, "name": "Sambal Pedes", "price": 5000, "is_ready": true  },
+    { "id": 13, "name": "Bumbu Hitam", "price": 7000, "is_ready": true  },
+    { "id": 14, "name": "Lalapan", "price": 2000, "is_ready": true }
+  ]
+}
