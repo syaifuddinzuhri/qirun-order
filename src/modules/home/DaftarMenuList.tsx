@@ -1,34 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { Box, SimpleGrid, Text, Card, CardBody, Heading, Stack, Icon, HStack, Flex, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, Button } from "@chakra-ui/react";
-import { getAllMenu, MenuData, MenuItem } from 'src/lib/MenuService';
 import { HiOutlineMinusCircle, HiOutlinePlusCircle } from "react-icons/hi";
+import { addMenuItem, getAllMenuItems, MenuData, MenuItem } from 'src/services/MenuService';
 
 const DaftarMenuList = () => {
   const [menu, setMenu] = useState<MenuData | null>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [carts, setCarts] = useState<{ id: number; qty: number }[]>([]);
+  const [carts, setCarts] = useState<{ id: string; qty: number }[]>([]);
+
+  const getMenuData = async () => {
+    try {
+      const data = await getAllMenuItems();
+      setMenu(data)
+    } catch (err) {
+      console.error(err);
+    } finally {
+    }
+  };
 
   useEffect(() => {
-    const fetchMenu = async () => {
-      try {
-        const res = await fetch('/api/menu');
-        const data = await res.json();
-        setMenu(data);
-      } catch (error) {
-        console.error('Failed to fetch menu:', error);
-      }
-    };
-
-    fetchMenu();
+    getMenuData()
   }, []);
 
   if (!menu) {
-    return <Text>Loading...</Text>;
+    return <></>;
   }
 
   const { makanan, minuman, tambahan } = menu;
 
-  const handleAddToCart = (itemId: number) => {
+  const handleAddToCart = (itemId: string) => {
     setCarts(prevCarts => {
       const existingItem = prevCarts.find(cartItem => cartItem.id === itemId);
       if (existingItem) {
@@ -42,7 +42,7 @@ const DaftarMenuList = () => {
     });
   };
 
-  const handleRemoveFromCart = (itemId: number) => {
+  const handleRemoveFromCart = (itemId: string) => {
     setCarts(prevCarts => {
       const existingItem = prevCarts.find(cartItem => cartItem.id === itemId);
       if (existingItem && existingItem.qty > 1) {
@@ -108,7 +108,7 @@ const DaftarMenuList = () => {
   );
 
 
-  const Counter = ({ itemId }: { itemId: number }) => {
+  const Counter = ({ itemId }: { itemId: string }) => {
     return (
       <HStack spacing={4} align="center">
         <HiOutlineMinusCircle fontSize={26} cursor={'pointer'} onClick={() => handleRemoveFromCart(itemId)} />

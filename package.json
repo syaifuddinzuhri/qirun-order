@@ -31,6 +31,7 @@
     "date-fns": "^3.3.1",
     "dayzed": "^3.2.3",
     "dotenv": "^16.3.1",
+    "firebase": "^11.6.0",
     "framer-motion": "^10.16.16",
     "jsonwebtoken": "^9.0.2",
     "moment": "^2.30.1",
